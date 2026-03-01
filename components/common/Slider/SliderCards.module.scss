@@ -1,0 +1,52 @@
+.cardsGrid {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  gap: var(--spacing-md);
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  padding: var(--spacing-md) var(--spacing-lg);
+  background: var(--color-white);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-base);
+  text-decoration: none;
+  color: var(--color-text-light);
+  font-weight: 500;
+
+  &:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+    color: var(--color-primary);
+  }
+
+  .cardIcon {
+    flex-shrink: 0;
+    color: var(--color-primary);
+  }
+}
+// cardsGrid
+// Mobile Landscape
+@media (max-width: 768px) and (orientation: landscape) {
+  .cardsGrid {
+    padding-right: 2.5rem;
+  }
+}
+@media (max-width: 480px) {
+  .card {
+    padding-right: 1rem;
+  }
+  .cardsGrid {
+    grid-template-columns: 100%;
+    gap: 0;
+    a {
+      margin: 0.5rem 0;
+    }
+  }
+  .sliderContent {
+    padding: 0px;
+  }
+}

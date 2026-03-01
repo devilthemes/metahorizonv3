@@ -1,0 +1,91 @@
+@use "@/styles/variables" as *;
+@use "@/styles/mixins" as *;
+
+.pageContainer {
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-xl);
+
+  @include md {
+    padding: 0 var(--spacing-2xl);
+  }
+}
+
+// Hero Section
+.heroSection {
+  padding: 5rem 0 3rem;
+  background: var(--color-white);
+}
+
+.heroTitle {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--color-text);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  @include md {
+    font-size: 3.5rem;
+  }
+
+  @include lg {
+    font-size: 4rem;
+  }
+}
+
+// Contact Section
+.contactSection {
+  padding: 3rem 0 5rem;
+}
+
+.contactGrid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 4rem;
+  align-items: start;
+
+  @include respond-to-max(900px) {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}
+
+.formColumn,
+.infoColumn {
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .heroSection {
+    padding: 4rem 0 2rem;
+  }
+
+  .heroTitle {
+    font-size: 2.25rem;
+
+    @include md {
+      font-size: 2.75rem;
+    }
+  }
+
+  .contactSection {
+    padding: 2rem 0 4rem;
+  }
+
+  .contactGrid {
+    gap: 2.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 var(--spacing-lg);
+  }
+
+  .heroTitle {
+    font-size: 1.75rem;
+  }
+}

@@ -1,0 +1,174 @@
+{
+  "caseStudies": [
+    {
+      "id": "statefarm",
+      "slug": "/case-studies/statefarm",
+      "title": "StateFarm Insurance",
+      "subtitle": "Enterprise IAM Transformation",
+      "client": "StateFarm Insurance",
+      "industry": "Insurance & Financial Services",
+      "overview": "StateFarm, one of the largest insurance providers in the United States, partnered with MetaHorizon to modernize their Identity and Access Management infrastructure across multiple business units serving over 85 million policies.",
+      "challenge": "StateFarm faced significant challenges with their legacy IAM systems: fragmented identity management across 20+ business units, inconsistent access policies, manual provisioning processes taking 5-7 days, and compliance risks with SOX and HIPAA regulations. Their existing systems couldn't scale to support 60,000+ employees and thousands of external partners.",
+      "solution": "MetaHorizon implemented a comprehensive SailPoint IdentityIQ solution integrated with Azure AD, ServiceNow for automated workflows, and custom connectors for legacy mainframe systems. We deployed role-based access control (RBAC) with 500+ business roles, automated joiner-mover-leaver processes, and implemented continuous access certification campaigns.",
+      "technologies": ["SailPoint IdentityIQ", "Azure Active Directory", "ServiceNow", "Active Directory", "Custom Connectors", "SQL Server", "REST APIs"],
+      "results": [
+        "Reduced provisioning time from 5-7 days to 4 hours",
+        "Achieved 99.9% access certification completion rate",
+        "Reduced IAM-related helpdesk tickets by 65%",
+        "Passed SOX and HIPAA audits with zero findings",
+        "Consolidated 20+ legacy systems into unified platform"
+      ],
+      "metrics": {
+        "provisioningTime": "5-7 days → 4 hours",
+        "ticketReduction": "65%",
+        "certificationRate": "99.9%",
+        "systemsConsolidated": "20+"
+      },
+      "testimonial": {
+        "quote": "MetaHorizon's expertise in IAM transformed our security posture. Their team's deep understanding of both technology and compliance requirements helped us achieve our modernization goals ahead of schedule.",
+        "author": "Michael Thompson",
+        "role": "CISO",
+        "company": "StateFarm Insurance"
+      },
+      "image": "/assets/img/case-studies/statefarm.jpg",
+      "duration": "18 months",
+      "year": "2024"
+    },
+    {
+      "id": "softntek",
+      "slug": "/case-studies/softntek",
+      "title": "SoftNTek",
+      "subtitle": "Cloud Security & DevOps Transformation",
+      "client": "SoftNTek Solutions",
+      "industry": "Technology & Software Development",
+      "overview": "SoftNTek, a leading software development company, engaged MetaHorizon to implement comprehensive cloud security and DevOps automation across their global delivery centers serving Fortune 500 clients.",
+      "challenge": "SoftNTek needed to secure their multi-cloud environment (AWS, Azure, GCP) while enabling rapid development cycles. They faced challenges with inconsistent security policies, manual deployment processes, lack of visibility into cloud resources, and difficulty meeting client security requirements across different industries.",
+      "solution": "MetaHorizon implemented a comprehensive DevSecOps framework with automated security scanning, infrastructure as code using Terraform, CI/CD pipelines with built-in security gates, and centralized cloud security monitoring. We also deployed Okta for unified identity management across all cloud platforms.",
+      "technologies": ["Okta", "Terraform", "AWS Security Hub", "Azure Security Center", "Jenkins", "Docker", "Kubernetes", "Splunk"],
+      "results": [
+        "Reduced deployment time from 2 weeks to 2 hours",
+        "Achieved 100% security compliance across all environments",
+        "Reduced security incidents by 80%",
+        "Enabled 10x faster feature delivery",
+        "Achieved SOC 2 Type II certification"
+      ],
+      "metrics": {
+        "deploymentTime": "2 weeks → 2 hours",
+        "incidentReduction": "80%",
+        "complianceRate": "100%",
+        "deliverySpeed": "10x faster"
+      },
+      "testimonial": {
+        "quote": "The DevSecOps transformation MetaHorizon delivered has been game-changing. We can now deliver secure software at speed while meeting the stringent requirements of our enterprise clients.",
+        "author": "Rajesh Patel",
+        "role": "CTO",
+        "company": "SoftNTek Solutions"
+      },
+      "image": "/assets/img/case-studies/softntek.jpg",
+      "duration": "12 months",
+      "year": "2024"
+    },
+    {
+      "id": "gore",
+      "slug": "/case-studies/gore",
+      "title": "W.L. Gore & Associates",
+      "subtitle": "Zero Trust Security Implementation",
+      "client": "W.L. Gore & Associates",
+      "industry": "Manufacturing & Materials Science",
+      "overview": "W.L. Gore & Associates, the innovative materials science company behind GORE-TEX®, partnered with MetaHorizon to implement a Zero Trust security architecture protecting their global research and manufacturing operations.",
+      "challenge": "Gore needed to protect sensitive intellectual property and research data across 50+ global facilities while maintaining collaboration capabilities. Their traditional perimeter-based security model was insufficient for protecting against modern threats and supporting their distributed workforce of 12,000+ associates.",
+      "solution": "MetaHorizon designed and implemented a comprehensive Zero Trust architecture with identity-centric security, micro-segmentation, continuous verification, and least-privilege access. We deployed Okta for identity management, Zscaler for secure access, and implemented behavioral analytics for threat detection.",
+      "technologies": ["Okta", "Zscaler", "CrowdStrike", "Microsoft Intune", "Splunk", "Custom ML Models", "API Security Gateway"],
+      "results": [
+        "Reduced security breach risk by 90%",
+        "Enabled secure remote work for 100% of workforce",
+        "Reduced unauthorized access attempts by 95%",
+        "Achieved ISO 27001 certification",
+        "Protected 500+ TB of sensitive research data"
+      ],
+      "metrics": {
+        "riskReduction": "90%",
+        "remoteWorkEnablement": "100%",
+        "accessAttemptReduction": "95%",
+        "dataProtected": "500+ TB"
+      },
+      "testimonial": {
+        "quote": "MetaHorizon's Zero Trust implementation has fundamentally transformed how we protect our innovations. Their team understood our unique culture and security needs, delivering a solution that protects without hindering collaboration.",
+        "author": "Dr. Sarah Chen",
+        "role": "VP of Information Security",
+        "company": "W.L. Gore & Associates"
+      },
+      "image": "/assets/img/case-studies/gore.jpg",
+      "duration": "15 months",
+      "year": "2023"
+    },
+    {
+      "id": "gap",
+      "slug": "/case-studies/gap",
+      "title": "Gap Inc.",
+      "subtitle": "Retail Digital Transformation & IAM",
+      "client": "Gap Inc.",
+      "industry": "Retail & E-Commerce",
+      "overview": "Gap Inc., one of the world's largest apparel retailers, engaged MetaHorizon to modernize their customer identity platform and secure their omnichannel retail experience serving millions of customers globally.",
+      "challenge": "Gap faced challenges with fragmented customer identities across their brand portfolio (Gap, Old Navy, Banana Republic, Athleta), inconsistent customer experiences, security vulnerabilities in legacy systems, and inability to provide personalized experiences while maintaining privacy compliance with CCPA and GDPR.",
+      "solution": "MetaHorizon implemented a unified customer identity platform using Okta Customer Identity Cloud, enabling single sign-on across all brands, progressive profiling, fraud detection, and privacy-compliant data management. We also implemented adaptive authentication and real-time threat detection.",
+      "technologies": ["Okta Customer Identity Cloud", "AWS", "React", "Node.js", "Kafka", "Redis", "Machine Learning Fraud Detection"],
+      "results": [
+        "Increased customer registration conversion by 35%",
+        "Reduced fraudulent transactions by 75%",
+        "Achieved 99.99% platform availability during peak seasons",
+        "Enabled seamless cross-brand shopping experience",
+        "Achieved CCPA and GDPR compliance"
+      ],
+      "metrics": {
+        "conversionIncrease": "35%",
+        "fraudReduction": "75%",
+        "availability": "99.99%",
+        "brandsUnified": "4+"
+      },
+      "testimonial": {
+        "quote": "The customer identity platform MetaHorizon built has transformed how our customers interact with our brands. The seamless experience across our portfolio has driven significant business results.",
+        "author": "Jennifer Martinez",
+        "role": "VP of Digital Technology",
+        "company": "Gap Inc."
+      },
+      "image": "/assets/img/case-studies/gap.jpg",
+      "duration": "14 months",
+      "year": "2023"
+    },
+    {
+      "id": "capitalone",
+      "slug": "/case-studies/capitalone",
+      "title": "Capital One",
+      "subtitle": "Cloud-Native IAM & Security",
+      "client": "Capital One Financial",
+      "industry": "Banking & Financial Services",
+      "overview": "Capital One, a leading digital bank, partnered with MetaHorizon to implement cloud-native identity and access management solutions supporting their all-in cloud strategy and serving millions of customers.",
+      "challenge": "As a cloud-first bank, Capital One needed IAM solutions that could scale to handle millions of customer identities, support microservices architecture, meet stringent financial regulations (SOX, GLBA, FFIEC), and enable rapid innovation while maintaining security.",
+      "solution": "MetaHorizon implemented a cloud-native IAM architecture using Okta for workforce identity, custom microservices for customer identity, API security gateways, and automated compliance monitoring. We integrated with AWS services, Kubernetes, and implemented real-time risk-based authentication.",
+      "technologies": ["Okta", "AWS IAM", "Kubernetes", "Apache Kafka", "PostgreSQL", "Redis", "Custom Microservices", "API Gateway"],
+      "results": [
+        "Supported 100M+ customer identities",
+        "Achieved 99.999% authentication availability",
+        "Reduced authentication latency to <100ms",
+        "Passed all regulatory audits with zero findings",
+        "Enabled 50% faster feature deployment"
+      ],
+      "metrics": {
+        "identitiesSupported": "100M+",
+        "availability": "99.999%",
+        "latency": "<100ms",
+        "deploymentSpeed": "50% faster"
+      },
+      "testimonial": {
+        "quote": "MetaHorizon's deep expertise in cloud-native IAM helped us scale our identity platform to support our digital banking vision. Their solutions have been critical to our cloud transformation.",
+        "author": "David Kim",
+        "role": "SVP of Identity & Access Management",
+        "company": "Capital One Financial"
+      },
+      "image": "/assets/img/case-studies/capital.jpg",
+      "duration": "20 months",
+      "year": "2023"
+    }
+  ]
+}

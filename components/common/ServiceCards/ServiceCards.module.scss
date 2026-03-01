@@ -1,0 +1,125 @@
+@use "@/styles/variables" as *;
+@use "@/styles/mixins" as *;
+
+.serviceCards {
+  padding: 5rem 2rem;
+  border-radius: 1.5rem;
+  background: linear-gradient(
+    135deg,
+    rgba(47, 88, 155, 0.06) 0%,
+    rgba(29, 165, 212, 0.06) 100%
+  );
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.cardsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 2rem;
+}
+
+.twoColumns {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+
+  @include respond-to-max(767px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.card {
+  position: relative;
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  padding: 2.5rem 2rem;
+  transition: all var(--transition-base);
+  overflow: hidden;
+
+  &:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-xl);
+    border-color: var(--color-primary);
+  }
+}
+
+.cardNumber {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  opacity: 0.1;
+  line-height: 1;
+}
+
+.cardIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 12px;
+  background: linear-gradient(
+    135deg,
+    rgba(47, 88, 155, 0.1) 0%,
+    rgba(29, 165, 212, 0.1) 100%
+  );
+  color: var(--color-primary);
+  margin-bottom: 1.5rem;
+}
+
+.cardTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: 1rem;
+  padding-right: 3rem;
+}
+
+.cardDescription {
+  font-size: 0.9375rem;
+  color: var(--color-text-light);
+  line-height: 1.7;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .serviceCards {
+    padding: 3rem 1.5rem;
+  }
+
+  .cardsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .cardNumber {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    padding: 2rem 1.5rem;
+  }
+
+  .cardTitle {
+    font-size: 1.125rem;
+  }
+
+  .cardDescription {
+    font-size: 0.875rem;
+  }
+  .cardsGrid {
+    gap: 0;
+  }
+  .slideImage {
+    height: 220px;
+  }
+}

@@ -1,0 +1,112 @@
+@use "@/styles/variables" as *;
+@use "@/styles/mixins" as *;
+
+.contactInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.infoTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.locationsList {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.locationItem {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.companyName {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.contactDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.contactDetail {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.iconWrapper {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-md);
+  background: linear-gradient(135deg, rgba(47, 88, 155, 0.1) 0%, rgba(29, 165, 212, 0.1) 100%);
+  color: var(--color-primary);
+}
+
+.detailContent {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.detailLabel {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+.detailText {
+  font-size: 0.9375rem;
+  color: var(--color-text-light);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.detailLink {
+  font-size: 0.9375rem;
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+
+  &:hover {
+    color: var(--color-primary-dark);
+    text-decoration: underline;
+  }
+}
+
+@media (max-width: 480px) {
+  .infoTitle {
+    font-size: 1.25rem;
+  }
+
+  .companyName {
+    font-size: 1.125rem;
+  }
+
+  .iconWrapper {
+    width: 36px;
+    height: 36px;
+
+    svg {
+      width: 18px;
+      height: 18px;
+    }
+  }
+
+  .detailText,
+  .detailLink {
+    font-size: 0.875rem;
+  }
+}

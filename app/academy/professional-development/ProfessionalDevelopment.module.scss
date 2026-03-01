@@ -1,0 +1,89 @@
+@use "@/styles/variables" as *;
+@use "@/styles/mixins" as *;
+
+.pageContainer {
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-xl);
+
+  @include md {
+    padding: 0 var(--spacing-2xl);
+  }
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.sectionTitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 1rem;
+  line-height: 1.2;
+
+  @include md {
+    font-size: 3rem;
+  }
+}
+
+.sectionSubtitle {
+  font-size: 1.125rem;
+  color: var(--color-text-light);
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+// Programs Section
+.programsSection {
+  padding: 6rem 0;
+  background: var(--color-white);
+}
+
+// Outcomes Section
+.outcomesSection {
+  padding: 6rem 0;
+  background: linear-gradient(135deg, rgba(47, 88, 155, 0.03) 0%, rgba(29, 165, 212, 0.03) 100%);
+}
+
+// Benefits Section
+.benefitsSection {
+  padding: 6rem 0;
+  background: var(--color-white);
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 var(--spacing-lg);
+  }
+
+  .sectionHeader {
+    margin-bottom: 3rem;
+  }
+
+  .sectionTitle {
+    font-size: 1.75rem;
+  }
+
+  .sectionSubtitle {
+    font-size: 1rem;
+  }
+
+  .programsSection,
+  .outcomesSection,
+  .benefitsSection {
+    padding: 4rem 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .sectionTitle {
+    font-size: 1.5rem;
+  }
+}

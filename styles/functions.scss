@@ -1,0 +1,90 @@
+// ========================================
+// SCSS Functions
+// ========================================
+
+// Convert px to rem
+@function rem($pixels) {
+  @return calc($pixels / 16) * 1rem;
+}
+
+// Calculate percentage
+@function percentage($part, $whole) {
+  @return calc($part / $whole * 100%);
+}
+
+// Darken color
+@function darken-color($color, $percentage) {
+  @return darken($color, $percentage);
+}
+
+// Lighten color
+@function lighten-color($color, $percentage) {
+  @return lighten($color, $percentage);
+}
+
+// Fade color
+@function fade($color, $opacity) {
+  @return rgba($color, $opacity);
+}
+
+// Calculate font-size with clamp
+@function fluid-type($min-size, $max-size, $min-vw: 320px, $max-vw: 1200px) {
+  $slope: calc(($max-size - $min-size) / ($max-vw - $min-vw));
+  $y-intercept: calc($min-size - $slope * $min-vw);
+  @return clamp($min-size, $y-intercept + $slope * 100vw, $max-size);
+}
+
+// Get contrast color (black or white based on background)
+@function contrast-color($color) {
+  @if (lightness($color) > 50%) {
+    @return #000000;
+  } @else {
+    @return #ffffff;
+  }
+}
+
+// Calculate spacing multiplier
+@function spacing($multiplier: 1) {
+  @return calc(var(--spacing-md) * $multiplier);
+}
+
+// Get shadow by level
+@function shadow($level: 'md') {
+  @if $level == 'sm' {
+    @return var(--shadow-sm);
+  } @else if $level == 'lg' {
+    @return var(--shadow-lg);
+  } @else if $level == 'xl' {
+    @return var(--shadow-xl);
+  } @else {
+    @return var(--shadow-md);
+  }
+}
+
+// Get breakpoint value
+@function breakpoint($name: 'md') {
+  @if $name == 'sm' {
+    @return 640px;
+  } @else if $name == 'md' {
+    @return 768px;
+  } @else if $name == 'lg' {
+    @return 1024px;
+  } @else if $name == 'xl' {
+    @return 1280px;
+  } @else if $name == '2xl' {
+    @return 1536px;
+  } @else {
+    @return 768px;
+  }
+}
+
+// Calculate transition duration
+@function transition-duration($speed: 'base') {
+  @if $speed == 'fast' {
+    @return var(--transition-fast);
+  } @else if $speed == 'slow' {
+    @return var(--transition-slow);
+  } @else {
+    @return var(--transition-base);
+  }
+}

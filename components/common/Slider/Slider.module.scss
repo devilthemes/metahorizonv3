@@ -1,0 +1,688 @@
+// ========================================
+// Responsive Slider Component Styles
+// ========================================
+
+.sliderSection {
+  position: relative;
+  width: 100%;
+  min-height: 600px;
+  overflow: hidden;
+}
+
+.sliderContainer {
+  position: relative;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-xl);
+  height: 100%;
+  min-height: 600px;
+}
+
+// ========================================
+// Slide Wrapper (for fade transitions)
+// ========================================
+.slideWrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  visibility: hidden;
+  transition:
+    opacity 0.5s ease-in-out,
+    visibility 0.5s ease-in-out;
+
+  &.active {
+    opacity: 1;
+    visibility: visible;
+    z-index: 2;
+  }
+
+  &.fadingOut {
+    opacity: 0;
+    z-index: 1;
+  }
+}
+
+// ========================================
+// Slider Content Layout
+// ========================================
+.sliderContent {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 0.8fr 1fr;
+  gap: calc(var(--spacing-xl) + 1rem);
+  align-items: center;
+  height: 100%;
+  min-height: 600px;
+}
+
+// ========================================
+// Image Section (Left Side)
+// ========================================
+.imageSection {
+  position: relative;
+}
+
+.imageWrapper {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.slideImage {
+  width: 100%;
+  max-width: 500px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+  border-radius: 2rem 0;
+}
+
+// ========================================
+// Info Box Overlay
+// ========================================
+.infoBox {
+  background: var(--color-secondary);
+  color: var(--color-white);
+  padding: var(--spacing-md);
+  border-radius: 8px;
+  width: 150px;
+  height: 150px;
+  max-width: 150px;
+  max-height: 150px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.infoList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.infoItem {
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  line-height: 1.4;
+  margin: 0;
+  text-align: center;
+
+  &:not(:last-child) {
+    margin-bottom: var(--spacing-xs);
+  }
+}
+
+// ========================================
+// Content Section (Right Side)
+// ========================================
+.contentSection {
+  padding: var(--spacing-lg);
+}
+
+.slideTitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin: 0 0 var(--spacing-sm) 0;
+  line-height: 1.2;
+}
+
+.slideSubtitle {
+  font-size: 1.125rem;
+  color: var(--color-text-light);
+  margin: 0 0 var(--spacing-xl) 0;
+  font-weight: 400;
+}
+
+// ========================================
+// Cards Grid
+// ========================================
+.cardsGrid {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  gap: var(--spacing-md);
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  padding: var(--spacing-md) var(--spacing-lg);
+  background: var(--color-white);
+  border: 0px solid var(--color-border);
+  border-radius: 8px;
+  color: var(--color-text);
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  text-decoration: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all var(--transition-fast);
+
+  &:hover {
+    border-color: var(--color-primary);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    transform: translateY(-2px);
+  }
+  svg {
+    margin-right: var(--spacing-md);
+    color: var(--color-primary);
+    transition: color var(--transition-fast);
+  }
+}
+
+// ========================================
+// Navigation Buttons
+// ========================================
+.navButton {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  transition: all var(--transition-fast);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+  &:hover {
+    background: var(--color-primary);
+    border-color: var(--color-primary);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+
+    .navIcon {
+      color: var(--color-white);
+    }
+  }
+}
+
+.prevButton {
+  left: 0;
+}
+
+.nextButton {
+  right: 0;
+}
+
+.navIcon {
+  width: 24px;
+  height: 24px;
+  color: var(--color-text);
+  transition: color var(--transition-fast);
+}
+
+// ========================================
+// Slide Indicators
+// ========================================
+.indicators {
+  position: absolute;
+  bottom: var(--spacing-lg);
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: var(--spacing-sm);
+  z-index: 10;
+  display: none;
+}
+
+.indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--color-border);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: all var(--transition-fast);
+
+  &.active {
+    background: var(--color-primary);
+    width: 30px;
+    border-radius: 5px;
+  }
+
+  &:hover {
+    background: var(--color-primary-light);
+  }
+}
+
+// ========================================
+// Responsive Styles
+// ========================================
+@media (max-width: 1200px) {
+  .sliderContent {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+  }
+
+  .imageSection {
+    order: 1;
+  }
+
+  .contentSection {
+    order: 2;
+    padding: 0;
+  }
+
+  .slideTitle {
+    font-size: 2rem;
+  }
+
+  .slideImage {
+    max-width: 400px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .contentSection {
+    padding: 0 var(--spacing-lg);
+  }
+  .sliderSection {
+    min-height: auto;
+    height: 750px;
+  }
+
+  .sliderContainer {
+    min-height: auto;
+    padding: var(--spacing-xl);
+  }
+
+  .sliderContent {
+    min-height: auto;
+    padding: var(--spacing-lg) 0;
+  }
+
+  .imageWrapper {
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .slideImage {
+    max-width: 400px;
+    aspect-ratio: 4/3;
+    margin: 0 auto;
+    width: 400px;
+    height: 400px;
+  }
+
+  .infoBox {
+    position: absolute;
+    bottom: auto;
+    right: auto;
+    margin-top: var(--spacing-md);
+
+    max-width: none;
+    height: auto;
+    max-height: none;
+  }
+}
+
+@media (max-width: 900px) {
+  .sliderSection {
+    padding: var(--spacing-xl) 0;
+  }
+
+  .sliderContainer {
+    padding: 0 var(--spacing-lg);
+  }
+
+  .sliderContent {
+    gap: var(--spacing-lg);
+  }
+
+  .infoBox {
+    width: 100%;
+    max-width: none;
+    padding: var(--spacing-md);
+    border-radius: 8px;
+  }
+
+  .infoItem {
+    font-size: 0.8125rem;
+  }
+
+  .slideTitle {
+    font-size: 1.75rem;
+  }
+
+  .slideSubtitle {
+    font-size: 1rem;
+  }
+
+  .cardsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .navButton {
+    width: 40px;
+    height: 40px;
+  }
+
+  .navIcon {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .sliderContainer {
+    padding: 0 var(--spacing-md);
+  }
+
+  .slideTitle {
+    font-size: 1.5rem;
+  }
+
+  .slideSubtitle {
+    font-size: 0.9375rem;
+  }
+
+  .slideImage {
+    max-width: 400px;
+    width: 400px;
+  }
+
+  .navButton {
+    display: none;
+  }
+
+  .indicators {
+    display: flex;
+  }
+}
+
+// Mobile Landscape
+@media (max-width: 768px) and (orientation: landscape) {
+  .sliderSection {
+    min-height: 100vh;
+    height: 730px;
+  }
+
+  .sliderContainer {
+    padding: var(--spacing-lg) var(--spacing-md);
+  }
+
+  .sliderContent {
+    padding: 0;
+    min-height: auto;
+  }
+
+  .slideImage {
+    max-width: 400px;
+    width: 400px;
+    height: 400px;
+    aspect-ratio: 1/1;
+    margin: 0 auto;
+  }
+
+  .infoBox {
+    display: none;
+  }
+
+  .contentSection {
+    padding: 0 0 0 var(--spacing-lg);
+  }
+
+  .slideTitle {
+    font-size: 1.25rem;
+    margin-bottom: var(--spacing-xs);
+  }
+
+  .slideSubtitle {
+    font-size: 0.8125rem;
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .cardsGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-xs);
+  }
+
+  .card {
+    padding: var(--spacing-xs);
+    font-size: 0.6875rem;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 640px) {
+  .sliderSection {
+    min-height: auto;
+  }
+
+  .sliderContainer {
+    padding: 0 var(--spacing-md);
+  }
+
+  .sliderContent {
+    padding: var(--spacing-md) 0;
+  }
+
+  .slideImage {
+    max-width: 100%;
+    width: 100%;
+    aspect-ratio: 16/9;
+    border-radius: 1rem 0;
+  }
+
+  .infoBox {
+    min-width: auto;
+    padding: var(--spacing-sm);
+    border-radius: 0 0 12px 12px;
+  }
+
+  .infoItem {
+    font-size: 0.75rem;
+    line-height: 1.5;
+  }
+
+  .slideTitle {
+    font-size: 1.375rem;
+  }
+
+  .slideSubtitle {
+    font-size: 0.875rem;
+  }
+
+  .cardsGrid {
+    gap: 0;
+  }
+
+  .card {
+    padding: var(--spacing-sm) var(--spacing-md);
+    font-size: 0.8125rem;
+    border-radius: 0;
+    border-bottom: 1px solid var(--color-border);
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  .indicators {
+    bottom: var(--spacing-md);
+  }
+
+  .indicator {
+    width: 8px;
+    height: 8px;
+
+    &.active {
+      width: 24px;
+    }
+  }
+}
+
+// Mobile Landscape (small screens)
+@media (max-width: 640px) and (orientation: landscape) {
+  .sliderSection {
+    min-height: 100vh;
+    height: auto;
+  }
+
+  .sliderContainer {
+    padding: var(--spacing-md);
+  }
+
+  .sliderContent {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: var(--spacing-md);
+    padding: 0;
+  }
+
+  .imageSection {
+    flex: 0 0 auto;
+  }
+
+  .slideImage {
+    max-width: 180px;
+    aspect-ratio: 1/1;
+  }
+
+  .infoBox {
+    display: none;
+  }
+
+  .contentSection {
+    flex: 1;
+    padding: 0;
+  }
+
+  .slideTitle {
+    font-size: 1.125rem;
+    margin-bottom: var(--spacing-xs);
+  }
+
+  .slideSubtitle {
+    font-size: 0.75rem;
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .cardsGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-xs);
+  }
+
+  .card {
+    padding: var(--spacing-xs);
+    font-size: 0.625rem;
+    border-radius: 4px;
+    border: 1px solid var(--color-border);
+  }
+}
+
+@media (max-width: 480px) {
+  .sliderSection {
+    padding: var(--spacing-lg) 0;
+    min-height: auto;
+    height: 1000px;
+  }
+
+  .contentSection {
+    padding: 0 1rem;
+  }
+
+  .cardsGrid {
+    gap: 0;
+  }
+
+  .sliderContainer {
+    padding: 0;
+  }
+
+  .infoBox {
+    height: auto;
+  }
+
+  .slideTitle {
+    font-size: 1.25rem;
+  }
+
+  .slideSubtitle {
+    font-size: 0.8125rem;
+  }
+
+  .card {
+    padding: var(--spacing-xs) var(--spacing-sm);
+    font-size: 0.75rem;
+  }
+  .navButton {
+    top: 287px;
+  }
+}
+
+// Mobile Landscape (very small screens)
+@media (max-width: 480px) and (orientation: landscape) {
+  .sliderSection {
+    min-height: 100vh;
+    height: auto;
+  }
+
+  .sliderContainer {
+    padding: var(--spacing-sm);
+  }
+
+  .sliderContent {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: 0;
+  }
+
+  .slideImage {
+    max-width: 200px;
+    height: 200px;
+    aspect-ratio: 1/1;
+  }
+
+  .infoBox {
+    display: none;
+  }
+
+  .contentSection {
+    flex: 1;
+    padding: 0 0 0 var(--spacing-sm);
+  }
+
+  .slideTitle {
+    font-size: 0.9375rem;
+    margin-bottom: 2px;
+  }
+
+  .slideSubtitle {
+    font-size: 0.6875rem;
+    margin-bottom: var(--spacing-xs);
+  }
+
+  .cardsGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2px;
+  }
+
+  .card {
+    padding: 2px var(--spacing-xs);
+    font-size: 0.5625rem;
+    border-radius: 2px;
+  }
+}

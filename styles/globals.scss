@@ -1,0 +1,188 @@
+@use "./variables" as *;
+@use "./mixins" as *;
+
+// Note: Bootstrap CSS is loaded via CDN in layout.tsx for better performance
+// Only custom Bootstrap overrides should be added here if needed
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-background);
+  color: var(--color-text);
+  font-family: var(--font-roboto), Arial, Helvetica, sans-serif;
+  background-image: url("/assets/img/background.svg");
+  background-repeat: no-repeat;
+  background-position: 50% 200px;
+  background-size: 105% auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+// Skip Link (Accessibility)
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--color-primary);
+  color: var(--color-white);
+  padding: var(--spacing-sm) var(--spacing-md);
+  text-decoration: none;
+  border-radius: 0 0 var(--radius-md) var(--radius-md);
+  z-index: var(--z-tooltip);
+  transition: top var(--transition-fast);
+
+  &:focus {
+    top: 0;
+    outline: 2px solid var(--color-primary-dark);
+    outline-offset: 2px;
+  }
+}
+
+// Links
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+
+  &:hover {
+    color: var(--color-primary-dark);
+  }
+}
+
+// Images
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+// Buttons
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
+
+// Reduced Motion
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+// Utility Classes
+.container {
+  @include container;
+}
+
+.text-truncate {
+  @include text-truncate;
+}
+
+.visually-hidden,
+.sr-only {
+  @include visually-hidden;
+}
+
+// Section Spacing
+.section {
+  padding: var(--spacing-3xl) 0;
+
+  @include md {
+    padding: var(--spacing-2xl) 0;
+  }
+
+  @include lg {
+    padding: var(--spacing-3xl) 0;
+  }
+}
+
+// Typography Utilities
+.text-center {
+  text-align: center;
+}
+
+.text-primary {
+  color: var(--color-primary);
+}
+
+.text-secondary {
+  color: var(--color-secondary);
+}
+
+// Background Utilities
+.bg-primary {
+  background-color: var(--color-primary);
+}
+
+.bg-secondary {
+  background-color: var(--color-secondary);
+}
+
+.bg-light {
+  background-color: var(--color-background);
+}
+
+// Shadow Utilities
+.shadow-sm {
+  box-shadow: var(--shadow-sm);
+}
+
+.shadow-md {
+  box-shadow: var(--shadow-md);
+}
+
+.shadow-lg {
+  box-shadow: var(--shadow-lg);
+}
+
+.shadow-xl {
+  box-shadow: var(--shadow-xl);
+}
+
+// Border Radius Utilities
+.rounded-sm {
+  border-radius: var(--radius-sm);
+}
+
+.rounded-md {
+  border-radius: var(--radius-md);
+}
+
+.rounded-lg {
+  border-radius: var(--radius-lg);
+}
+
+.rounded-xl {
+  border-radius: var(--radius-xl);
+}
+
+.rounded-full {
+  border-radius: var(--radius-full);
+}
+.homeTitle {
+  display: block;
+  font-size: 38px;
+  line-height: 125%;
+  margin: 0px;
+  padding: 1rem 0;
+  color: var(--primary-500);
+  font-weight: 300 !important;
+  text-align: center;
+  padding: 3rem 0 2rem 0;
+}
